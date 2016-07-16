@@ -25,7 +25,7 @@ public class AirportMap extends PApplet {
 	
 	UnfoldingMap map;
 	private List<Marker> airportList;
-	List<Marker> routeList;
+	private List<Marker> routeList;
 	private AirportMarker lastSelected;
 	
 	public void setup() {
@@ -47,7 +47,6 @@ public class AirportMap extends PApplet {
 		for(PointFeature feature : features) {
 			AirportMarker m = new AirportMarker(feature);
 	
-			m.setRadius(5);
 			airportList.add(m);
 			
 			// put airport in hashmap with OpenFlights unique id for key
@@ -72,8 +71,7 @@ public class AirportMap extends PApplet {
 			}
 			
 			LineMarkerPlusKey sl = new LineMarkerPlusKey(route.getLocations(), route.getProperties(), source);
-		
-			System.out.println(sl.getProperties());
+
 			
 			//UNCOMMENT IF YOU WANT TO SEE ALL ROUTES
 			routeList.add(sl);

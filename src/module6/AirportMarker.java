@@ -21,12 +21,14 @@ public class AirportMarker extends CommonMarker {
 	public AirportMarker(Feature city) {
 		super(((PointFeature)city).getLocation(), city.getProperties());
 		ident = Integer.parseInt(city.getId());
+		this.setRadius(5);
+		this.setStrokeColor(200);
 	}
 	
 	@Override
 	public void drawMarker(PGraphics pg, float x, float y) {
 		if(!clicked) {
-			pg.fill(11);
+			pg.fill(0, 0, 200);
 		}
 		else {
 			pg.fill(255, 0, 0);
