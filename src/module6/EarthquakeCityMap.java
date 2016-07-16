@@ -98,7 +98,7 @@ public class EarthquakeCityMap extends PApplet {
 	
 	
 	public void draw() {
-		background(0);
+		background(124,124,124);
 		map.draw();
 		addKey();
 		
